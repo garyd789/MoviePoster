@@ -30,20 +30,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val logging = HttpLoggingInterceptor().apply {
-            level = HttpLoggingInterceptor.Level.BODY
-        }
-
-        val client = OkHttpClient.Builder()
-            .addInterceptor(logging)
-            .build()
-
 
         val moshi = Moshi.Builder().add(KotlinJsonAdapterFactory()).build()
 
         val retrofit: Retrofit = Retrofit.Builder()
             .baseUrl("https://www.omdbapi.com/")
-            .client(client)
             .addConverterFactory(MoshiConverterFactory.create(moshi))
             .build()
 
