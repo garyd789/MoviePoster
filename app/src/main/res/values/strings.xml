@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Movie Poster</string>
+    <string name="button"> Submit </string>
+    <string name="userInput"> Enter movie title</string>
+</resources>
